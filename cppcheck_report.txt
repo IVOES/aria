@@ -1,0 +1,113 @@
+aria.c:40:36: style:inconclusive: Boolean expression '!S->gc_stack_cap' is used in bitwise operation. Did you mean '||'? [bitwiseOnBoolean]
+    int n = (S->gc_stack_cap << 1) | !S->gc_stack_cap;
+                                   ^
+aria.c:40:36: style: Boolean result is used in bitwise operation. Clarify expression with parentheses. [clarifyCondition]
+    int n = (S->gc_stack_cap << 1) | !S->gc_stack_cap;
+                                   ^
+aria.c:1127:9: warning: Either the condition '!fp' is redundant or there is possible null pointer dereference: fp. [nullPointerRedundantCheck]
+  fseek(fp, 0, SEEK_END);
+        ^
+aria.c:1125:7: note: Assuming that condition '!fp' is not redundant
+  if (!fp) ar_error_str(S, "could not open file");
+      ^
+aria.c:1127:9: note: Null pointer dereference
+  fseek(fp, 0, SEEK_END);
+        ^
+aria.c:1128:16: warning: Either the condition '!fp' is redundant or there is possible null pointer dereference: fp. [nullPointerRedundantCheck]
+  size = ftell(fp);
+               ^
+aria.c:1125:7: note: Assuming that condition '!fp' is not redundant
+  if (!fp) ar_error_str(S, "could not open file");
+      ^
+aria.c:1128:16: note: Null pointer dereference
+  size = ftell(fp);
+               ^
+aria.c:1129:9: warning: Either the condition '!fp' is redundant or there is possible null pointer dereference: fp. [nullPointerRedundantCheck]
+  fseek(fp, 0, SEEK_SET);
+        ^
+aria.c:1125:7: note: Assuming that condition '!fp' is not redundant
+  if (!fp) ar_error_str(S, "could not open file");
+      ^
+aria.c:1129:9: note: Null pointer dereference
+  fseek(fp, 0, SEEK_SET);
+        ^
+aria.c:1132:36: warning: Either the condition '!fp' is redundant or there is possible null pointer dereference: fp. [nullPointerRedundantCheck]
+  r = fread(res->u.str.s, 1, size, fp);
+                                   ^
+aria.c:1125:7: note: Assuming that condition '!fp' is not redundant
+  if (!fp) ar_error_str(S, "could not open file");
+      ^
+aria.c:1132:36: note: Null pointer dereference
+  r = fread(res->u.str.s, 1, size, fp);
+                                   ^
+aria.c:1133:10: warning: Either the condition '!fp' is redundant or there is possible null pointer dereference: fp. [nullPointerRedundantCheck]
+  fclose(fp);
+         ^
+aria.c:1125:7: note: Assuming that condition '!fp' is not redundant
+  if (!fp) ar_error_str(S, "could not open file");
+      ^
+aria.c:1133:10: note: Null pointer dereference
+  fclose(fp);
+         ^
+aria.c:1148:28: warning: Either the condition '!fp' is redundant or there is possible null pointer dereference: fp. [nullPointerRedundantCheck]
+  r = fwrite(data, len, 1, fp);
+                           ^
+aria.c:1147:7: note: Assuming that condition '!fp' is not redundant
+  if (!fp) ar_error_str(S, "could not open file");
+      ^
+aria.c:1148:28: note: Null pointer dereference
+  r = fwrite(data, len, 1, fp);
+                           ^
+aria.c:1149:10: warning: Either the condition '!fp' is redundant or there is possible null pointer dereference: fp. [nullPointerRedundantCheck]
+  fclose(fp);
+         ^
+aria.c:1147:7: note: Assuming that condition '!fp' is not redundant
+  if (!fp) ar_error_str(S, "could not open file");
+      ^
+aria.c:1149:10: note: Null pointer dereference
+  fclose(fp);
+         ^
+aria.c:269:9: style: The scope of the variable 'p' can be reduced. [variableScope]
+  char *p, *q;
+        ^
+aria.c:269:13: style: The scope of the variable 'q' can be reduced. [variableScope]
+  char *p, *q;
+            ^
+aria.c:270:10: style: The scope of the variable 'len' can be reduced. [variableScope]
+  size_t len, sz;
+         ^
+aria.c:270:15: style: The scope of the variable 'sz' can be reduced. [variableScope]
+  size_t len, sz;
+              ^
+aria.c:854:13: style: The scope of the variable 'sym' can be reduced. [variableScope]
+  ar_Value *sym, *v;
+            ^
+aria.c:914:13: style: The scope of the variable 'cond' can be reduced. [variableScope]
+  ar_Value *cond, *next, *v = args;
+            ^
+aria.c:914:20: style: The scope of the variable 'next' can be reduced. [variableScope]
+  ar_Value *cond, *next, *v = args;
+                   ^
+aria.c:938:13: style: The scope of the variable 'res' can be reduced. [variableScope]
+  ar_Value *res;
+            ^
+aria.c:1348:33: portability: Passing NULL after the last typed argument to a variadic function leads to undefined behaviour. [varFuncNullUB]
+    args = ar_new_list(S, 2, err, NULL);
+                                ^
+aria.c:298:12: style: Variable 'last' is assigned a value that is never used. [unreadVariable]
+      last = ar_append_tail(S, last, ar_new_string(S, ")"));
+           ^
+aria.c:1316:0: style: The function 'ar_at_panic' is never used. [unusedFunction]
+
+^
+aria.c:118:0: style: The function 'ar_new_udata' is never used. [unusedFunction]
+
+^
+aria.c:376:0: style: The function 'ar_opt_udata' is never used. [unusedFunction]
+
+^
+aria.c:353:0: style: The function 'ar_to_udata' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingIncludeSystem]
+
